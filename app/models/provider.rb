@@ -1,4 +1,5 @@
 class Provider < ApplicationRecord
+  include WithCommonRate
   has_many :rates
 
   monetize :amount_cents, with_model_currency: :amount_currency
