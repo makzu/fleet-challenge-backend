@@ -1,0 +1,10 @@
+<div style="margin-bottom: 0.5em;">
+  <strong><%= provider.name %></strong><br />
+  Flat rate: <%= provider.amount.format %>
+
+  <% unless provider.amount.currency == provider.common_amount.currency %>
+    (<%= provider.common_amount.format %>)
+  <% end %>
+
+  <%= render partial: "rate", collection: provider.rates %>
+</div>

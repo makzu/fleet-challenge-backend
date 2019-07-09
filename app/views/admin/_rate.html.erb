@@ -1,0 +1,11 @@
+<%# A table here would probably be more readable. Oh well. %>
+<div>
+<%= form_for rate, url: {action: 'update_rate', id: rate.id} do |f| %>
+  <%= f.text_field :origin, style: 'width: 3em;' %> -
+  <%= f.text_field :destination, style: 'width: 3em;' %>
+  <%= f.select :amount_currency, options_for_select(['USD', 'EUR'], selected: rate.amount_currency) %>
+  <%= f.number_field :amount, step: 0.01, style: 'width: 5em;' %>
+  (<%= rate.common_amount.format %>)
+  <%= f.submit 'Update' %>
+<% end %>
+</div>
