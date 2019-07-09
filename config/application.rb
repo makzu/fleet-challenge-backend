@@ -15,5 +15,10 @@ module FleetChallengeBackend
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Ensure the React app running on port 3001 can make requests to the API
+    config.action_dispatch.default_headers = {
+      'Access-Control-Allow-Origin' => 'http://localhost:3001'
+    }
   end
 end
